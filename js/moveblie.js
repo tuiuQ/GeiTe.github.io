@@ -3,6 +3,7 @@ $(function(){
 	function move(){
 		$("#menu").click(function(){
 			// $(".nav").toggleClass("block");
+
 			$(".nav").slideToggle(300);
 		})
 		// if (document.body.offsetWidth <= 992) {
