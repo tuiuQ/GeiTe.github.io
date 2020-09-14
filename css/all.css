@@ -34,6 +34,11 @@ a,a:hover{text-decoration: none;}
 	.tz-canvas>.row>div>a>div>img{height: 100%;margin-left: -50%;}
 	.nav{display: block;}
 }
+@media (min-width: 767px) {
+	.nav {
+		display: block;
+	}
+}
 /*关于*/
 .tz-about{max-width: 768px;margin: 0 auto;}
 .tz-about>p{color: #555555;letter-spacing:8px;}
