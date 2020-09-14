@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">	<!-- 自适应显示器宽度 -->
+	<title>简绘-Canvas</title>
+	<link rel="stylesheet" href="./css/bootstrap.css">	<!-- 引用bootstrap样式 -->
+	<link rel="stylesheet" href="./css/baguetteBox.min.css">
+	<link rel="stylesheet" href="./css/all.css">
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="mb"></div>
+		<div class="dl">
+			<span class="glyphicon glyphicon-remove" style="float: right;margin: 5px;" id="guanbi"></span>
+			<h1>登录</h1>
+			<form action="">
+				<div class="form-group">
+				    <label for="">账号：</label>	
+				    <input class="form-control" type="text" placeholder="输入账号..." name="username" id="username" />
+				 </div>
+				 <div class="form-group">
+				    <label for="">密码：</label>	
+				    <input class="form-control" type="password" placeholder="输入密码..." name="password" id="password" />
+				 </div>
+				 <div class="form-group">
+				 	<input type="checkbox" id="jzmm"><small style="margin-left: 5px;">记住密码</small>
+				 </div>
+				 <div class="form-group">
+				 	<input type="submit" value="提交" name="submit" id="submit" class="btn btn-info btn-block">
+				 </div>
+				 <div class="form-group">
+				 	<input type="reset" value="重置" name="reset" id="reset" class="btn btn-danger btn-block">
+				 </div>
+				</form>
+		</div>
+		<div class="container" id="nav">
+			<img src="./images/icon/menu.png" alt="" id="menu">
+			<ul class="nav nav-tabs">		<!-- 导航 -->
+				<li role="presentation"><a href="./index.html">Jane painting</a></li>
+				<li role="presentation"><a href="./gallery.html">画廊</a></li>
+				<li role="presentation"><a href="./video.html">视频</a></li>
+				<li role="presentation" class="active"><a href="#">Canvas绘画</a></li>
+				<li role="presentation"><a href="./Aboud.html">关于</a></li>
+				<a class="btn_login r" id="dl">登录</a>
+			</ul>
+		</div>
+		<!-- 标题栏 -->
+		<div class="top_img" style="background: url(./images/top_img/4.png);"><div class="container"><h2>绘画<br><small>Canvas</small></h2></div></div>
+		<!-- 主题内容 -->
+		<div class="container">
+		    <!-- Canvas -->
+		    <div class="title"><h4>Canvas绘画</h4></div>
+		    <div class="tz-canvas">
+		    	<div class="row">
+		    		<div class="col-sm-6 col-md-2"><a href="./playvideo.html" name="C_carrot"><div><img src="./images/canvas_img/1.png" alt=""class="img-rounded"></div></a></div>
+		    		<div class="col-sm-6 col-md-2"><a href="./playvideo.html" name="C_totoro"><div><img src="./images/canvas_img/2.png" alt=""class="img-rounded"></div></a></div>
+		    		<div class="col-sm-6 col-md-2"><a href="./playvideo.html" name="C_card"><div><img src="./images/canvas_img/3.png" alt=""class="img-rounded"></div></a></div>
+		    		<div class="col-sm-6 col-md-2"><a href="./playvideo.html" name="C_duck"><div><img src="./images/canvas_img/4.png" alt=""class="img-rounded"></div></a></div>
+		    		<div class="col-sm-6 col-md-2"><a href="./playvideo.html" name="C_bird"><div><img src="./images/canvas_img/5.png" alt=""class="img-rounded"></div></a></div>
+		    		<div class="col-sm-6 col-md-2"><a href="./playvideo.html" name="C_rabbit"><div><img src="./images/canvas_img/6.jpg" alt=""class="img-rounded"></div></a></div>
+		    		<div class="col-sm-6 col-md-2"><a href="./playvideo.html" name="move"><div><img src="./images/canvas_img/move.png" alt=""class="img-rounded"></div></a></div>
+		    		<div class="col-sm-6 col-md-2"><a href="./playvideo.html" name="Time"><div><img src="./images/canvas_img/Time.png" alt=""class="img-rounded"></div></a></div>
+		    	</div>
+		    </div>
+		</div>
+		
+		<!-- footer -->
+		<div class="footer_name">
+			<div>
+				<p class="text-center">制作者：余浩源 &nbsp; &nbsp;学号：1801050654 &nbsp; &nbsp;      所在学校：广东创新科技职业学院 &nbsp; &nbsp; 所在班级：18计应卓越班</p>
+				<p class="text-center">邮箱：yuhaoyuang@163.com</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- 引用JQ and bootstrap --> 
+	<script src="./js/jquery-3.4.1.js"></script>
+	<script src="./js/bootstrap.js"></script>
+	<script src="./js/baguetteBox.min.js"></script>
+	<script src="./框架/layer-v3.1.1/layer/layer.js"></script>
+	<script src="./js/moveblie.js"></script>
+	<script type="text/javascript">
+		baguetteBox.run('.tz-gallery');
+		$(function(){
+			if (sessionStorage["username"] && sessionStorage["password"]) {
+				console.log("账号:"+sessionStorage["username"]+"密码:"+sessionStorage["password"]);
+				$("#dl").html(sessionStorage["username"]);
+			}
+			// $("#dl").on("click",function(){
+			// 	layer.open({
+			//       type: 2,
+			//       title: '登录',
+			//       maxmin: true,
+			//       shadeClose: true, //点击遮罩关闭层
+			//       area : ['320px' , '400px'],
+			//       content: './web/dl.html'
+			//     });
+			// })
+			$(".tz-video>div>div>div>a,.tz-canvas>div>div>a").click(function(){	
+				if (window.sessionStorage) {
+					sessionStorage.name = $(this).attr("name");
+					location.href = "./playvideo.html";
+				}else{
+					alert("NOT strong");
+				}
+			});
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">	<!-- 自适应显示器宽度 -->
+	<title>简绘-关于</title>
+	<link rel="stylesheet" href="./css/bootstrap.css">	<!-- 引用bootstrap样式 -->
+	<link rel="stylesheet" href="./css/baguetteBox.min.css">
+	<link rel="stylesheet" href="./css/all.css">
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="mb"></div>
+		<div class="dl">
+			<span class="glyphicon glyphicon-remove" style="float: right;margin: 5px;" id="guanbi"></span>
+			<h1>登录</h1>
+			<form action="">
+				<div class="form-group">
+				    <label for="">账号：</label>	
+				    <input class="form-control" type="text" placeholder="输入账号..." name="username" id="username" />
+				 </div>
+				 <div class="form-group">
+				    <label for="">密码：</label>	
+				    <input class="form-control" type="password" placeholder="输入密码..." name="password" id="password" />
+				 </div>
+				 <div class="form-group">
+				 	<input type="checkbox" id="jzmm"><small style="margin-left: 5px;">记住密码</small>
+				 </div>
+				 <div class="form-group">
+				 	<input type="submit" value="提交" name="submit" id="submit" class="btn btn-info btn-block">
+				 </div>
+				 <div class="form-group">
+				 	<input type="reset" value="重置" name="reset" id="reset" class="btn btn-danger btn-block">
+				 </div>
+				</form>
+		</div>
+		<div class="container" id="nav">
+			<img src="./images/icon/menu.png" alt="" id="menu">
+			<ul class="nav nav-tabs">		<!-- 导航 -->
+				<li role="presentation"><a href="./index.html">Jane painting</a></li>
+				<li role="presentation"><a href="./gallery.html">画廊</a></li>
+				<li role="presentation"><a href="./video.html">视频</a></li>
+				<li role="presentation"><a href="./Canvas.html">Canvas绘画</a></li>
+				<li role="presentation" class="active"><a href="">关于</a></li>
+				<a class="btn_login r" id="dl">登录</a>
+			</ul>
+		</div>
+		<!-- 标题栏 -->
+		<div class="top_img" style="background: url(./images/top_img/5.png);"><div class="container"><h2>关于<br><small>About US</small></h2></div></div>
+		<!-- 主题内容 -->
+		<div class="container">
+		    <!-- 关于 -->
+		    <div class="title"><h4>关于&nbsp;<small>About Us</small></h4></div>
+		    <div class="tz-about">
+		    	<p>
+		    		<p class="text"><strong class="lead tz-about-title">简绘</strong>本网页由余浩源独自设计以及制作，想要向外输出的是关于绘画的各种，另外结合H5的的Canvas实现可爱的动漫展示。开发本网页使用了bootstrpt框架、图片展示使用了jqeryMasonry，初步UI设计使用Axure PR，
+					图片使用PS编辑，制作此网页是为了完成大二第二学期的H5期末作业，本网页见能够自适
+					应网页大小、视频播放器、Canvas绘画出的可爱动漫形象、美观的图片展示、登录账号（可记住密码）、反馈功能。</p>
+					<p class="text-right">2020年6月9日</p>
+					<p class="text-right">余浩源</p>
+				</p>
+		    </div>
+		    <!-- 反馈 -->
+		    <div class="title"><h4>反馈&nbsp;<small>feedback</small></h4></div>
+		    <div class="tz-feedback">
+		    	<div class="form-group">
+		    		<label for="exampleInputEmail1">姓名</label>
+		    		<input type="text" class="form-control" id="exampleInputEmail1" placeholder="姓名">
+		    	</div>
+		    	<div class="form-group">
+		    		<label for="exampleInputEmail1">联系方式</label>
+		    		<input type="text" class="form-control" id="exampleInputEmail1" placeholder="联系方式">
+		    	</div>
+		    	<div class="form-group">
+		    		<label for="exampleInputEmail1">邮箱</label>
+		    		<input type="text" class="form-control" id="exampleInputEmail1" placeholder="邮箱">
+		    	</div>
+		    	<div class="form-group">
+		    		<label for="">反馈</label>	
+		    		<textarea class="form-control" rows="10" placeholder="输入反馈..."></textarea>
+		    	</div>
+		 		<div class="row" style="text-align: center;">
+		 			<div class="col-md-3 col-md-offset-3"><button type="submit" class="btn btn-info btn-block">Submit</button></div>
+		 			<div class="col-md-3"><button type="reset" class="btn btn-danger btn-block">Reset</button></div>
+		 		</div>
+		    </div>
+		</div>
+		
+		<!-- footer -->
+		<div class="footer_name">
+			<div>
+				<p class="text-center">制作者：余浩源 &nbsp; &nbsp;学号：1801050654 &nbsp; &nbsp;      所在学校：广东创新科技职业学院 &nbsp; &nbsp; 所在班级：18计应卓越班</p>
+				<p class="text-center">邮箱：yuhaoyuang@163.com</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- 引用JQ and bootstrap --> 
+	<script src="./js/jquery-3.4.1.js"></script>
+	<script src="./js/bootstrap.js"></script>
+	<script src="./js/baguetteBox.min.js"></script>
+	<script src="./框架/layer-v3.1.1/layer/layer.js"></script>
+	<script src="./js/moveblie.js"></script>
+	<script type="text/javascript">
+		baguetteBox.run('.tz-gallery');
+		$(function(){
+			if (sessionStorage["username"] && sessionStorage["password"]) {
+				console.log("账号:"+sessionStorage["username"]+"密码:"+sessionStorage["password"]);
+				$("#dl").html(sessionStorage["username"]);
+			}
+			// $("#dl").on("click",function(){
+			// 	layer.open({
+			//       type: 2,
+			//       title: '登录',
+			//       maxmin: true,
+			//       shadeClose: true, //点击遮罩关闭层
+			//       area : ['320px' , '400px'],
+			//       content: './web/dl.html'
+			//     });
+			// })
+			$(".tz-video>div>div>div>a,.tz-canvas>div>div>a").click(function(){	
+				if (window.sessionStorage) {
+					sessionStorage.name = $(this).attr("name");
+					location.href = "./playvideo.html";
+				}else{
+					alert("NOT strong");
+				}
+			});
+		});
+	</script>
+</body>
+</html>

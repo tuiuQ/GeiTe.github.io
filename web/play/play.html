@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">	<!-- 自适应显示器宽度 -->
+	<title>视频播放器</title>
+	<link rel="stylesheet" href="../../css/bootstrap.css">	<!-- 引用bootstrap样式 -->
+	<link rel="stylesheet" href="../../css/baguetteBox.min.css">
+	<style>
+		#myvideo{
+			width: 100%;
+			height: 100%;
+			position: relative;
+			left: 25px;
+			top: 20px;
+		}
+		@media (max-width: 992px){
+			#myvideo{
+			width: 100%;
+			height: 100%;
+			position: relative;
+			top: 5px;
+		}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h3 class="h3">【梵高世界】Van gogh's world</h3>
+		<p class="p">动画短片·预告片</p>
+		<p class="p">未经作者授权，禁止转载</p>
+			<video id="myvideo" controls="controls">
+				<source src="./video/fg_video.ogg" type="video/ogg">
+				<source src="./video/fg_video.mp4" type="video/mp4">
+				您的浏览器不支持H5播放视频，请切换其他浏览器尝试。
+			</video>
+	</div>
+</body>
+</html>

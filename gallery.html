@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">	<!-- 自适应显示器宽度 -->
+	<title>简绘-画作</title>
+	<link rel="stylesheet" href="./css/bootstrap.css">	<!-- 引用bootstrap样式 -->
+	<link rel="stylesheet" href="./css/chromagallery.min.css">
+	<link rel="stylesheet" href="./css/all.css">
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="mb"></div>
+		<div class="dl">
+			<span class="glyphicon glyphicon-remove" style="float: right;margin: 5px;" id="guanbi"></span>
+			<h1>登录</h1>
+			<form action="">
+				<div class="form-group">
+				    <label for="">账号：</label>	
+				    <input class="form-control" type="text" placeholder="输入账号..." name="username" id="username" />
+				 </div>
+				 <div class="form-group">
+				    <label for="">密码：</label>	
+				    <input class="form-control" type="password" placeholder="输入密码..." name="password" id="password" />
+				 </div>
+				 <div class="form-group">
+				 	<input type="checkbox" id="jzmm"><small style="margin-left: 5px;">记住密码</small>
+				 </div>
+				 <div class="form-group">
+				 	<input type="submit" value="提交" name="submit" id="submit" class="btn btn-info btn-block">
+				 </div>
+				 <div class="form-group">
+				 	<input type="reset" value="重置" name="reset" id="reset" class="btn btn-danger btn-block">
+				 </div>
+				</form>
+		</div>
+		<div class="container" id="nav">
+			<img src="./images/icon/menu.png" alt="" id="menu">
+			<ul class="nav nav-tabs">		<!-- 导航 -->
+				<li role="presentation" ><a href="./index.html">Jane painting</a></li>
+				<li role="presentation" class="active"><a href="#">画廊</a></li>
+				<li role="presentation"><a href="./video.html">视频</a></li>
+				<li role="presentation"><a href="./Canvas.html">Canvas绘画</a></li>
+				<li role="presentation"><a href="./Aboud.html">关于</a></li>
+				<a class="btn_login r" id="dl">登录</a>
+			</ul>
+		</div>
+		<!-- 标题栏 -->
+		<div class="top_img" style="background: url(./images/top_img/2.png);"><div class="container"><h2>画廊<br><small>Gallery</small></h2></div></div>
+		<!-- 主题内容 -->
+		<div class="container">
+			<!-- 画廊 -->
+			<div class="title"><h4>画作&nbsp;<small>artwork</small></h4></div>
+			<article class="jq22-container">
+				<div class="content">
+					<div class="chroma-gallery mygallery">
+						<img src="./images/gallery_img/1.jpg" alt="Pic 1" data-largesrc="./images/gallery_img/1.jpg">
+						<img src="./images/gallery_img/2.jpg" alt="Pic 2" data-largesrc="./images/gallery_img/2.jpg">
+						<img src="./images/gallery_img/3.jpg" alt="Pic 3" data-largesrc="./images/gallery_img/3.jpg">
+						<img src="./images/gallery_img/4.jpg" alt="Pic 4" data-largesrc="./images/gallery_img/4.jpg">
+						<img src="./images/gallery_img/5.jpg" alt="Pic 5" data-largesrc="./images/gallery_img/5.jpg">
+						<img src="./images/gallery_img/6.jpg" alt="Pic 6" data-largesrc="./images/gallery_img/6.jpg">
+						<img src="./images/gallery_img/7.jpg" alt="Pic 7" data-largesrc="./images/gallery_img/7.jpg">
+						<img src="./images/gallery_img/8.jpg" alt="Pic 8" data-largesrc="./images/gallery_img/8.jpg">
+						<img src="./images/gallery_img/9.jpg" alt="Pic 9" data-largesrc="./images/gallery_img/9.jpg">
+						<img src="./images/gallery_img/10.jpg" alt="Pic 10" data-largesrc="images/gallery_img/10.jpg">
+						<img src="./images/gallery_img/11.jpg" alt="Pic 11" data-largesrc="images/gallery_img/11.jpg">
+						<img src="./images/gallery_img/12.jpg" alt="Pic 12" data-largesrc="images/gallery_img/12.jpg">
+						<img src="./images/gallery_img/13.jpg" alt="Pic 13" data-largesrc="images/gallery_img/13.jpg">
+						<img src="./images/gallery_img/14.jpg" alt="Pic 14" data-largesrc="images/gallery_img/14.jpg">
+						<img src="./images/gallery_img/15.jpg" alt="Pic 15" data-largesrc="images/gallery_img/15.jpg">
+						<img src="./images/gallery_img/16.jpg" alt="Pic 16" data-largesrc="images/gallery_img/16.jpg">
+						<img src="./images/gallery_img/17.jpg" alt="Pic 17" data-largesrc="images/gallery_img/17.jpg">
+						<img src="./images/gallery_img/18.jpg" alt="Pic 18" data-largesrc="images/gallery_img/18.jpg">
+						<img src="./images/gallery_img/19.jpg" alt="Pic 19" data-largesrc="images/gallery_img/19.jpg">
+						<img src="./images/gallery_img/20.jpg" alt="Pic 20" data-largesrc="images/gallery_img/20.jpg">
+						<img src="./images/gallery_img/21.jpg" alt="Pic 21" data-largesrc="images/gallery_img/21.jpg">
+						<img src="./images/gallery_img/22.jpg" alt="Pic 22" data-largesrc="images/gallery_img/22.jpg">
+						<img src="./images/gallery_img/23.jpg" alt="Pic 23" data-largesrc="images/gallery_img/23.jpg">
+						<img src="./images/gallery_img/24.jpg" alt="Pic 24" data-largesrc="images/gallery_img/24.jpg">
+						<img src="./images/gallery_img/25.jpg" alt="Pic 25" data-largesrc="images/gallery_img/25.jpg">
+						<img src="./images/gallery_img/26.jpg" alt="Pic 26" data-largesrc="images/gallery_img/26.jpg">
+						<img src="./images/gallery_img/27.jpg" alt="Pic 27" data-largesrc="images/gallery_img/27.jpg">
+						<img src="./images/gallery_img/28.jpg" alt="Pic 28" data-largesrc="images/gallery_img/28.jpg">
+						<img src="./images/gallery_img/29.jpg" alt="Pic 29" data-largesrc="images/gallery_img/29.jpg">
+					</div>
+				</div>
+			
+			</article>
+		</div>
+		
+		<!-- footer -->
+		<div class="footer_name">
+			<div>
+				<p class="text-center">制作者：余浩源 &nbsp; &nbsp;学号：1801050654 &nbsp; &nbsp;      所在学校：广东创新科技职业学院 &nbsp; &nbsp; 所在班级：18计应卓越班</p>
+				<p class="text-center">邮箱：yuhaoyuang@163.com</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- 引用JQ and bootstrap --> 
+	<script src="./js/jquery-3.4.1.js"></script>
+	<script src="./js/bootstrap.js"></script>
+	<script src="./js/imagesloaded.min.js"></script>
+	<script src="./js/masonry.min.js"></script>
+	<script src="./js/modernizr-chrg.min.js"></script>
+	<script src="./js/chromagallery.pkgd.min.js"></script>
+	<script src="./框架/layer-v3.1.1/layer/layer.js"></script>
+	<script src="./js/moveblie.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			if (sessionStorage["username"] && sessionStorage["password"]) {
+				console.log("账号:"+sessionStorage["username"]+"密码:"+sessionStorage["password"]);
+				$("#dl").html(sessionStorage["username"]);
+			}
+			// $("#dl").on("click",function(){
+			// 	layer.open({
+			//       type: 2,
+			//       title: '登录',
+			//       maxmin: true,
+			//       shadeClose: true, //点击遮罩关闭层
+			//       area : ['320px' , '400px'],
+			//       content: './web/dl.html'
+			//     });
+			// })
+			$(".mygallery").chromaGallery
+		    ({
+		        color:'#000',
+		        gridMargin:15,
+		        maxColumns:5,
+		        dof:true,
+		        screenOpacity:0.8
+		    });
+		});
+		
+	</script>
+</body>
+</html>

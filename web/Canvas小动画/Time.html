@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Canvas时钟</title>
+</head>
+<body>
+	<canvas id="canvas" width="1024" height="760"></canvas>
+	<script>
+		function $$(id){
+			return document.getElementById(id);
+		}
+		window.onload = function(){
+			var canvas = $$('canvas');
+			var ctx = canvas.getContext("2d");
+			function drewClock(){
+				//获取当前的时分秒
+				var now = new Date();
+				var seconds = now.getSeconds();
+				var minute = now.getMinutes();
+				var hour = now.getHours();
+				//小时必须获取浮点类型，产生偏移（小时+分钟比）
+				hour = hour+minute/60;
+				//将24小时转换为12小时，如果hour大于12则减去12
+				hour = hour>12?hour-12:hour;
+				
+				//开始绘画
+				ctx.save();
+				ctx.beginPath();
+				ctx.lineWidth = 5;
+				ctx.arc(700,300,200,0,Math.PI*360/180,false);
+				ctx.strokeStyle = "black";
+				ctx.stroke();
+				ctx.closePath();
+				ctx.restore();
+
+				//绘画时钟的12个刻度，每个刻度旋转30度
+				for (var i = 0; i < 12; i++) {
+					ctx.save();
+					ctx.strokeStyle = "black";
+					ctx.lineWidth = 7;
+					ctx.translate(700,300);//绘画开始点
+					ctx.rotate(i*Math.PI*30/180,700,300);//每次旋转30度，现在点为700,300
+					ctx.beginPath();
+					ctx.moveTo(0,-175);
+					ctx.lineTo(0,-192);
+					ctx.stroke();
+					ctx.closePath();
+					ctx.restore();
+				}
+
+				//绘画时钟
+				ctx.save();
+				ctx.lineWidth = 7;
+				ctx.strokeStyle = "black"
+				ctx.translate(700,300);
+				ctx.rotate(hour*30*Math.PI/180);
+				ctx.beginPath();
+				ctx.moveTo(0,20);
+				ctx.lineTo(0,-140);
+				ctx.stroke();
+				ctx.closePath();
+				ctx.restore();
+
+				//绘画小刻度60个，每个小刻度旋转6度
+				for (var i = 0; i < 60; i++) {
+					ctx.save();
+					ctx.strokeStyle = "black";
+					ctx.lineWidth = 3;
+					ctx.translate(700,300);//绘画开始点
+					ctx.rotate(i*Math.PI*6/180,700,300);//每次旋转6度，现在点为700,300
+					ctx.beginPath();
+					ctx.moveTo(0,-182);
+					ctx.lineTo(0,-192);
+					ctx.stroke();
+					ctx.closePath();
+					ctx.restore();
+				}
+
+				//绘画注释时间
+				ctx.save();
+				ctx.fillStyle = '#005555';
+				ctx.font = '22px 微软雅黑';
+				ctx.lineWidth = 6;
+				ctx.fillText(12,686,150);
+				ctx.fillText(1,770,170);
+				ctx.fillText(2,830,230);
+				ctx.fillText(3,856,310);
+				ctx.fillText(4,830,390);
+				ctx.fillText(5,780,440);
+				ctx.fillText(6,695,468);
+				ctx.fillText(7,615,446);
+				ctx.fillText(8,558,390);
+				ctx.fillText(9,532,310);
+				ctx.fillText(10,556,230);
+				ctx.fillText(11,610,176);	
+
+				//绘画分钟
+				ctx.save();
+				ctx.lineWidth = 4;
+				ctx.strokeStyle = "#00aaaa";
+				ctx.translate(700,300);
+				ctx.rotate(minute*6*Math.PI/180);
+				ctx.beginPath();
+				ctx.moveTo(0,22);
+				ctx.lineTo(0,-148);
+				ctx.stroke();
+				ctx.closePath();
+				ctx.restore();
+
+				//绘制秒钟
+				ctx.save();
+				ctx.lineWidth = 2;
+				ctx.strokeStyle = "#aaaaaa";
+				ctx.translate(700,300);
+				ctx.rotate(seconds*6*Math.PI/180); //让当前装饰跟着秒针一起转动,每次旋转6.
+				ctx.beginPath();
+				ctx.moveTo(0,30);
+				ctx.lineTo(0,-160);
+				ctx.stroke();
+				ctx.closePath();
+				ctx.restore();
+
+				//绘画时分秒的交叉点
+				ctx.save();
+				ctx.beginPath()
+				ctx.lineWidth = 3;
+				ctx.strokeStyle = 'black';
+				ctx.arc(700,300,5,0,360*Math.PI/180,false);
+				ctx.fillStyle = '#fff';
+				ctx.fill();
+				ctx.stroke();
+				ctx.closePath();
+			}
+			drewClock();
+			setInterval(function(){
+				ctx.clearRect(0,0,canvas.width,canvas.height);
+				drewClock();
+			},1000);
+		}
+	</script>
+</body>
+</html>
