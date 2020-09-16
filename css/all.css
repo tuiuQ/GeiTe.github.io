@@ -1,5 +1,6 @@
 .r{float: right;}
 .l{float: left;}
+html,body{min-width: 360px;} 	/*网页大小不能小于360px*/
 a,a:hover{text-decoration: none;}
 /*登录*/
 .btn_login{width: 80px;height: 42px;text-align: center;background-color: #F2F2F2;font-size: 15px;padding-top: 10px;}
@@ -22,6 +23,7 @@ a,a:hover{text-decoration: none;}
 	.tz-canvas>.row>div>a>div>img{width: 100%;}
 }
 @media (max-width: 766px){
+	.tz-canvas>.row>div>a>div{height: 100%;}
 	#menu{display: block;margin: 5px;}
 	#nav{background-color: #03899c;margin-bottom: 5px;}
 	#nav li{width: 95%; background-color: #fff;margin: 5px; border-radius: 5px;}
@@ -29,9 +31,12 @@ a,a:hover{text-decoration: none;}
 	.nav{display: none;}
 	.block{display: block;}
 }
-@media (min-width: 992px){
-	.tz-canvas>.row>div>a>div{height: 200px;border:1px solid #dedede;text-align: center;}
+@media (min-width: 1200px){
 	.tz-canvas>.row>div>a>div>img{height: 100%;margin-left: -50%;}
+}
+@media (min-width: 992px){
+	.tz-canvas>.row>div>a>div{height: 200px;border:1px solid #dedede;text-align: center;margin-top: 20px;}
+	.tz-canvas>.row>div>a>div>img{height: 100%;}
 	.nav{display: block;}
 }
 @media (min-width: 767px) {

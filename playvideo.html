@@ -7,6 +7,7 @@
 	<title>简绘-播放器</title>
 	<link rel="stylesheet" href="./css/bootstrap.css">	<!-- 引用bootstrap样式 -->
 	<link rel="stylesheet" href="./css/all.css">
+	<link rel="icon" href="./images/icon/jane.png" />	<!--添加icon图标-->
 </head>
 <body>
 	<div class="container-fluid">
@@ -59,7 +60,6 @@
 	</div>
 	<script src="./js/jquery-3.4.1.js"></script>
 	<script src="./js/bootstrap.js"></script>
-	<script src="./框架/layer-v3.1.1/layer/layer.js"></script>
 	<script src="./js/moveblie.js"></script>
 	<script>
 		$(function(){
@@ -67,16 +67,6 @@
 				console.log("账号:"+sessionStorage["username"]+"密码:"+sessionStorage["password"]);
 				$("#dl").html(sessionStorage["username"]);
 			}
-			// $("#dl").on("click",function(){
-			// 	layer.open({
-			//       type: 2,
-			//       title: '登录',
-			//       maxmin: true,
-			//       shadeClose: true, //点击遮罩关闭层
-			//       area : ['320px' , '400px'],
-			//       content: './web/dl.html'
-			//     });
-			// })
 			var value = sessionStorage["name"];
 			switch(value){
 				case "V_Van": 							//视频

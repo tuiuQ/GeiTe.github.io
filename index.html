@@ -8,10 +8,10 @@
 	<link rel="stylesheet" href="./css/bootstrap.css">	<!-- 引用bootstrap样式 -->
 	<link rel="stylesheet" href="./css/baguetteBox.min.css">
 	<link rel="stylesheet" href="./css/all.css">
+	<link rel="icon" href="./images/icon/jane.png" />	<!--添加icon图标-->
 </head>
 <body>
 	<div class="container-fluid">
-		<div class="mb"></div>
 		<div class="dl">
 			<span class="glyphicon glyphicon-remove" style="float: right;margin: 5px;" id="guanbi"></span>
 			<h1>登录</h1>
@@ -225,7 +225,6 @@
 	<script src="./js/jquery-3.4.1.js"></script>
 	<script src="./js/bootstrap.js"></script>
 	<script src="./js/baguetteBox.min.js"></script>
-	<script src="./框架/layer-v3.1.1/layer/layer.js"></script>
 	<script src="./js/moveblie.js"></script>
 	<script type="text/javascript">
 		baguetteBox.run('.tz-gallery');
@@ -242,16 +241,6 @@
 					alert("NOTStorage");		//浏览器不支持数据存储技术
 				}
 			});
-			// $("#dl").on("click",function(){
-			// 	layer.open({
-			//       type: 2,
-			//       title: '登录',
-			//       maxmin: true,
-			//       shadeClose: true, //点击遮罩关闭层
-			//       area : ['320px' , '400px'],
-			//       content: './web/dl.html'
-			//     });
-			// })
 		});
 	</script>
 </body>
