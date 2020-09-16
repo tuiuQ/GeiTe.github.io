@@ -3,7 +3,7 @@
 html,body{min-width: 360px;} 	/*网页大小不能小于360px*/
 a,a:hover{text-decoration: none;}
 /*登录*/
-.btn_login{width: 80px;height: 42px;text-align: center;background-color: #F2F2F2;font-size: 15px;padding-top: 10px;}
+.btn_login{width: 80px;height: 42px;text-align: center;background-color: #F2F2F2;font-size: 15px;padding-top: 10px;cursor: pointer;}
 .btn_login:hover{background-color: #03899C;color: #ffffff;transition: all 0.5s;}
 .btn_login_moveblie{color: #337ab7;}
 /*登录*/
@@ -13,7 +13,7 @@ a,a:hover{text-decoration: none;}
 .top_img div h2 small{color: #fdfdfd;}
 /*标题栏*/
 .title{margin: 20px auto;color: #03899c;}
-.footer_name{width: 100%;background-color: #333333;color: #DADADA;margin-top: 100px;}
+.footer_name{width: 100%;background-color: #333;color: #DADADA;margin-top: 100px;}
 .footer_name>div{font-size: 13px;line-height: 23px;text-indent: 2px;}
 /*Canvas绘画*/
 .tz-canvas>.row>div>a>div{overflow: hidden;}
