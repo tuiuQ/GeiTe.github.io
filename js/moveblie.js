@@ -24,6 +24,12 @@ $(function(){
 		$(".dl").show();
 		$(".mb").show();
 	});
+	$("#dl").hover(function(){
+		console.log(document.body.offsetWidth);
+		if(document.body.offsetWidth > 766){
+			$("#user_infor").fadeToggle(500);
+		}
+	});
 	$("#guanbi").click(function(){
 		$(".dl").hide();
 		$(".mb").hide();
