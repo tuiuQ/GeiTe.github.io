@@ -24,11 +24,14 @@ $(function(){
 		$(".dl").show();
 		$(".mb").show();
 	});
-	$("#dl").hover(function(){
-		console.log(document.body.offsetWidth);
+	$(".btn_login").hover(function(){
+//		console.log(document.body.offsetWidth);
 		if(document.body.offsetWidth > 766){
 			$("#user_infor").fadeToggle(500);
 		}
+	});
+	$("#user_infor>ul>li").hover(function(){	//个人星系
+		$(this).toggleClass("user_infor_li");
 	});
 	$("#guanbi").click(function(){
 		$(".dl").hide();
