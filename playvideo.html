@@ -7,11 +7,12 @@
 	<title>简绘-播放器</title>
 	<link rel="stylesheet" href="./css/bootstrap.css">	<!-- 引用bootstrap样式 -->
 	<link rel="stylesheet" href="./css/all.css">
+	<link rel="stylesheet" type="text/css" href="css/pinlun.css"/>
 	<link rel="icon" href="./images/icon/jane.ico" />	<!--添加icon图标-->
 </head>
 <body>
 	<div class="container-fluid">
-		<div class="mb"></div>
+		<div class="mb"></div> <!--登录是的黑色隔层-->
 		<div class="dl">
 			<span class="glyphicon glyphicon-remove" style="float: right;margin: 5px;" id="guanbi"></span>
 			<h1>登录</h1>
@@ -49,18 +50,42 @@
 		<!-- <div style="width: 100%;height: 705px;"> -->
 			<iframe frameborder="0" width="100%" height="800px" scrolling="no" id="iframe"></iframe>
 		<!-- </div> -->
-		
-		<!-- footer -->
+		<!--评论-->
+		<div class="nsc-content-camera nsc-hide" style="top: 10px; left: 10px;">
+		    <div class="nsc-content-camera-buttons" flex="none" layout="row" layout-align="start start">
+		        <button class="nsc-content-camera-button nsc-hide" type="button" id="nsc_video_camera_collapse">
+		            <span class="nsc-icon nsc-icon-panel-collapse"></span>
+		        </button>
+		        <button class="nsc-content-camera-button" type="button" id="nsc_video_camera_expand">
+		            <span class="nsc-icon nsc-icon-panel-expand"></span>
+		        </button>
+		        <button class="nsc-content-camera-button" type="button" id="nsc_video_camera_close">
+		            <span class="nsc-icon nsc-icon-panel-close"></span>
+		        </button>
+		    </div>
+		    <div class="nsc-content-camera-container">
+		        <div class="nsc-content-camera-shadow"></div>
+		    </div>
+		</div>
+		<!--评论-->
+	</div>
+	<!-- footer -->
 		<div class="footer_name" id="footer_name">
 			<div>
-				<p class="text-center">制作者：Jane &nbsp; &nbsp;联系方式：XXXXXXXXXXX &nbsp; &nbsp;      联系地址：China</p>
-				<p class="text-center">邮箱：xxxxxxxxxxxx@163.com</p>
+				<p>制作者：余浩源、邱垂杰、肖裕东  &nbsp; &nbsp;联系方式：XXXXXXXXXXX &nbsp; &nbsp;      联系地址：China</p>
+				<p>邮箱：xxxxxxxxxxxx@163.com</p>
+				<p>注：该作品为余浩源、邱垂杰、肖裕东所有。</p>
 			</div>
 		</div>
-	</div>
+		<!--返回最上-->
+		<div id="back">
+				<img src="./images/icon/up.svg" alt="" />
+		</div>
+	<!--返回最上-->
 	<script src="./js/jquery-3.4.1.js"></script>
 	<script src="./js/bootstrap.js"></script>
 	<script src="./js/moveblie.js"></script>
+	<script src="js/pinlun.js"></script>
 	<script>
 		$(function(){
 			if (sessionStorage["username"] && sessionStorage["password"]) {

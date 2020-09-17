@@ -1,11 +1,15 @@
 .r{float: right;}
 .l{float: left;}
+.dl{width: 400px;height: 500px;position: fixed;top: 150px;left: 46%;margin-left: -145px; background-color: #fff;padding: 20px;z-index: 20;border-radius: 20px;display: none;}
+.mb{width: 100%;height: 100%;background-color: rgba(0,0,0,0.4);position: fixed;top: 0;left: 0; z-index: 19; display: none;}
 html,body{min-width: 360px;} 	/*网页大小不能小于360px*/
-a,a:hover{text-decoration: none;}
+a,a:hover{text-decoration: none;cursor: pointer;}
 /*登录*/
 .btn_login{width: 80px;height: 42px;text-align: center;background-color: #F2F2F2;font-size: 15px;padding-top: 10px;cursor: pointer;}
 .btn_login:hover{background-color: #03899C;color: #ffffff;transition: all 0.5s;}
 .btn_login_moveblie{color: #337ab7;}
+#dl_btn{display: block;}
+#zc_btn{display: none;}
 /*登录*/
 /*标题栏*/
 .top_img{overflow: hidden;height: 300px;}
@@ -14,7 +18,10 @@ a,a:hover{text-decoration: none;}
 /*标题栏*/
 .title{margin: 20px auto;color: #03899c;}
 .footer_name{width: 100%;background-color: #333;color: #DADADA;margin-top: 100px;}
-.footer_name>div{font-size: 13px;line-height: 23px;text-indent: 2px;}
+.footer_name>div{font-size: 13px;line-height: 23px;text-indent: 2px;padding: 10px 0px;}
+.footer_name>div>p{text-align: center;margin: 0;}
+#back{position: fixed;z-index: 18;right: 30px; bottom: 30px;height: 40px;transition: all 1s;}
+#back>img{height: 100%;}
 /*Canvas绘画*/
 .tz-canvas>.row>div>a>div{overflow: hidden;}
 #menu{display: none;}
@@ -30,6 +37,7 @@ a,a:hover{text-decoration: none;}
 	#dl{width: 95%;float: left;margin: 5px;border-radius: 5px;}
 	.nav{display: none;}
 	.block{display: block;}
+	.dl{width: 300px;height: 400px;position: fixed;top: 150px;left: 50%;}
 }
 @media (min-width: 1200px){
 	.tz-canvas>.row>div>a>div>img{height: 100%;margin-left: -50%;}
@@ -52,5 +60,3 @@ a,a:hover{text-decoration: none;}
 .tz-feedback{
 	margin-top: 50px;
 }
-.dl{width: 300px;height: 400px;position: fixed;top: 150px;left: 50%;margin-left: -145px; background-color: #fff;padding: 20px;z-index: 20;border-radius: 20px;display: none;}
-.mb{width: 100%;height: 100%;background-color: rgba(0,0,0,0.4);position: fixed;top: 0;left: 0; z-index: 19; display: none;}
