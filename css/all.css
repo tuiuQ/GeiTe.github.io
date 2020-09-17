@@ -1,5 +1,11 @@
 .r{float: right;}
 .l{float: left;}
+#pinlun_title{color: #337ab7;font-size: 20px;}
+#pinlun>div>p>span.dis_name{color: #888;margin-left: 10px;}
+#pinlun>div>p.dis_cen{max-width: 800px;}
+#dis_text{margin: 20px 0px;}
+#dis_btn{margin-bottom: 20px;}
+#pinlun>div>p>img{height: 70px;width: 70px;}
 .dl{width: 400px;height: 500px;position: fixed;top: 150px;left: 46%;margin-left: -145px; background-color: #fff;padding: 20px;z-index: 20;border-radius: 20px;display: none;}
 .mb{width: 100%;height: 100%;background-color: rgba(0,0,0,0.4);position: fixed;top: 0;left: 0; z-index: 19; display: none;}
 html,body{min-width: 360px;} 	/*网页大小不能小于360px*/

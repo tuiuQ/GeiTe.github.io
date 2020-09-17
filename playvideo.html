@@ -7,34 +7,62 @@
 	<title>简绘-播放器</title>
 	<link rel="stylesheet" href="./css/bootstrap.css">	<!-- 引用bootstrap样式 -->
 	<link rel="stylesheet" href="./css/all.css">
-	<link rel="stylesheet" type="text/css" href="css/pinlun.css"/>
 	<link rel="icon" href="./images/icon/jane.ico" />	<!--添加icon图标-->
 </head>
 <body>
 	<div class="container-fluid">
 		<div class="mb"></div> <!--登录是的黑色隔层-->
 		<div class="dl">
-			<span class="glyphicon glyphicon-remove" style="float: right;margin: 5px;" id="guanbi"></span>
-			<h1>登录</h1>
-			<form action="">
-				<div class="form-group">
-				    <label for="">账号：</label>	
-				    <input class="form-control" type="text" placeholder="输入账号..." name="username" id="username" />
-				 </div>
-				 <div class="form-group">
-				    <label for="">密码：</label>	
-				    <input class="form-control" type="password" placeholder="输入密码..." name="password" id="password" />
-				 </div>
-				 <div class="form-group">
-				 	<input type="checkbox" id="jzmm"><small style="margin-left: 5px;">记住密码</small>
-				 </div>
-				 <div class="form-group">
-				 	<input type="submit" value="提交" name="submit" id="submit" class="btn btn-info btn-block">
-				 </div>
-				 <div class="form-group">
-				 	<input type="reset" value="重置" name="reset" id="reset" class="btn btn-danger btn-block">
-				 </div>
+			<div id="dl_btn">
+				<span class="glyphicon glyphicon-remove" style="float: right;margin: 5px;" id="guanbi"></span>
+				<h1>登录</h1>
+				<form action="">
+					<div class="form-group">
+					    <label for="">手机号：</label>	
+					    <input class="form-control" type="text" placeholder="输入手机号..." name="username" id="username" />
+					 </div>
+					 <div class="form-group">
+					    <label for="">密码：</label>	
+					    <input class="form-control" type="password" placeholder="输入密码..." name="password" id="password" />
+					 </div>
+					 <div class="form-group">
+					 	<input type="checkbox" id="jzmm"><small style="margin-left: 5px;">记住密码</small>
+					 </div>
+					 <div class="form-group">
+					 	<input type="submit" value="登录" name="submit" id="submit" class="btn btn-info btn-block">
+					 </div>
+					 <div class="form-group">
+					 	<input type="reset" value="重置" name="reset" id="reset" class="btn btn-danger btn-block">
+					 </div>
+					 <p class="text-right"><a id="zc_hidd">注册</a></p>
 				</form>
+			</div>
+			<div id="zc_btn">
+				<span class="glyphicon glyphicon-remove" style="float: right;margin: 5px;" id="zc_guanbi"></span>
+				<h1>注册</h1>
+				<form action="">
+					<div class="form-group">
+					    <label for="">用户名：</label>	
+					    <input class="form-control" type="phone" placeholder="输入用户名..." name="username" id="username" />
+					 </div>
+					<div class="form-group">
+					    <label for="">手机号：</label>	
+					    <input class="form-control" type="phone" placeholder="输入手机号..." name="username" id="username" />
+					 </div>
+					 <div class="form-group">
+					    <label for="">密码：</label>	
+					    <input class="form-control" type="password" placeholder="输入密码..." name="password" id="password" />
+					 </div>
+					 <div class="form-group">
+					    <label for="">确认密码：</label>	
+					    <input class="form-control" type="password" placeholder="输入密码..." name="password_two" id="password_two" />
+					 </div>
+					 <div class="form-group">
+					 	<input type="submit" value="注册" name="submit" id="submit" class="btn btn-info btn-block">
+					 </div>
+					 <p class="text-right"><a id="dl_hidd">登录</a></p>
+				</form>
+			</div>
 		</div>
 		<div class="container" id="nav">
 			<img src="./images/icon/menu.png" alt="" id="menu">
@@ -47,27 +75,45 @@
 				<a class="btn_login r" id="dl">登录</a>
 			</ul>
 		</div>
-		<!-- <div style="width: 100%;height: 705px;"> -->
-			<iframe frameborder="0" width="100%" height="800px" scrolling="no" id="iframe"></iframe>
-		<!-- </div> -->
-		<!--评论-->
-		<div class="nsc-content-camera nsc-hide" style="top: 10px; left: 10px;">
-		    <div class="nsc-content-camera-buttons" flex="none" layout="row" layout-align="start start">
-		        <button class="nsc-content-camera-button nsc-hide" type="button" id="nsc_video_camera_collapse">
-		            <span class="nsc-icon nsc-icon-panel-collapse"></span>
-		        </button>
-		        <button class="nsc-content-camera-button" type="button" id="nsc_video_camera_expand">
-		            <span class="nsc-icon nsc-icon-panel-expand"></span>
-		        </button>
-		        <button class="nsc-content-camera-button" type="button" id="nsc_video_camera_close">
-		            <span class="nsc-icon nsc-icon-panel-close"></span>
-		        </button>
-		    </div>
-		    <div class="nsc-content-camera-container">
-		        <div class="nsc-content-camera-shadow"></div>
-		    </div>
+		<div class="container">
+			<!-- <div style="width: 100%;height: 705px;"> -->
+				<iframe frameborder="0" width="100%" height="800px" scrolling="no" id="iframe"></iframe>
+			<!-- </div> -->
+			<!--评论-->
+				<p class="label text-left" id="pinlun_title">评论</p>
+				<hr />
+				<!--发表-->
+				<div>
+					<textarea name="dis_text" id="dis_text" rows="3" class="form-control" placeholder="请输入你想说的..."></textarea>
+					<input type="button" class="btn btn-success" value="评论" id="dis_btn"/>
+				</div>
+				<!--发表-->
+				<div id="pinlun">
+					<div class="discuss">
+						<p class="text-left">
+							<img src="images/gallery_img/17.jpg" alt="" class="img-circle"/>
+							<span class="dis_name">撒打发士大夫</span>
+						</p>
+						<blockquote class="blockquote-reverse">
+						  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+						  <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+						  <footer><cite title="Source Title">2020.9.18</cite></footer>
+						</blockquote>
+					</div>
+					<div class="discuss">
+						<p class="text-left">
+							<img src="images/gallery_img/17.jpg" alt="" class="img-circle"/>
+							<span class="dis_name">撒打发士大夫</span>
+						</p>
+						<blockquote class="blockquote-reverse">
+						  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+						  <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+						  <footer><cite title="Source Title">2020.9.18</cite></footer>
+						</blockquote>
+					</div>
+				</div>
+			<!--评论-->
 		</div>
-		<!--评论-->
 	</div>
 	<!-- footer -->
 		<div class="footer_name" id="footer_name">
@@ -85,7 +131,6 @@
 	<script src="./js/jquery-3.4.1.js"></script>
 	<script src="./js/bootstrap.js"></script>
 	<script src="./js/moveblie.js"></script>
-	<script src="js/pinlun.js"></script>
 	<script>
 		$(function(){
 			if (sessionStorage["username"] && sessionStorage["password"]) {
