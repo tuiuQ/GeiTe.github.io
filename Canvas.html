@@ -8,32 +8,62 @@
 	<link rel="stylesheet" href="./css/bootstrap.css">	<!-- 引用bootstrap样式 -->
 	<link rel="stylesheet" href="./css/baguetteBox.min.css">
 	<link rel="stylesheet" href="./css/all.css">
+	<link rel="icon" href="./images/icon/jane.ico" />	<!--添加icon图标-->
 </head>
 <body>
 	<div class="container-fluid">
-		<div class="mb"></div>
+		<div class="mb"></div>	<!--登录是的黑色隔层-->
 		<div class="dl">
-			<span class="glyphicon glyphicon-remove" style="float: right;margin: 5px;" id="guanbi"></span>
-			<h1>登录</h1>
-			<form action="">
-				<div class="form-group">
-				    <label for="">账号：</label>	
-				    <input class="form-control" type="text" placeholder="输入账号..." name="username" id="username" />
-				 </div>
-				 <div class="form-group">
-				    <label for="">密码：</label>	
-				    <input class="form-control" type="password" placeholder="输入密码..." name="password" id="password" />
-				 </div>
-				 <div class="form-group">
-				 	<input type="checkbox" id="jzmm"><small style="margin-left: 5px;">记住密码</small>
-				 </div>
-				 <div class="form-group">
-				 	<input type="submit" value="提交" name="submit" id="submit" class="btn btn-info btn-block">
-				 </div>
-				 <div class="form-group">
-				 	<input type="reset" value="重置" name="reset" id="reset" class="btn btn-danger btn-block">
-				 </div>
+			<div id="dl_btn">
+				<span class="glyphicon glyphicon-remove" style="float: right;margin: 5px;" id="guanbi"></span>
+				<h1>登录</h1>
+				<form action="">
+					<div class="form-group">
+					    <label for="">手机号：</label>	
+					    <input class="form-control" type="text" placeholder="输入手机号..." name="username" id="username" />
+					 </div>
+					 <div class="form-group">
+					    <label for="">密码：</label>	
+					    <input class="form-control" type="password" placeholder="输入密码..." name="password" id="password" />
+					 </div>
+					 <div class="form-group">
+					 	<input type="checkbox" id="jzmm"><small style="margin-left: 5px;">记住密码</small>
+					 </div>
+					 <div class="form-group">
+					 	<input type="submit" value="登录" name="submit" id="submit" class="btn btn-info btn-block">
+					 </div>
+					 <div class="form-group">
+					 	<input type="reset" value="重置" name="reset" id="reset" class="btn btn-danger btn-block">
+					 </div>
+					 <p class="text-right"><a id="zc_hidd">注册</a></p>
 				</form>
+			</div>
+			<div id="zc_btn">
+				<span class="glyphicon glyphicon-remove" style="float: right;margin: 5px;" id="zc_guanbi"></span>
+				<h1>注册</h1>
+				<form action="">
+					<div class="form-group">
+					    <label for="">用户名：</label>	
+					    <input class="form-control" type="phone" placeholder="输入用户名..." name="username" id="username" />
+					 </div>
+					<div class="form-group">
+					    <label for="">手机号：</label>	
+					    <input class="form-control" type="phone" placeholder="输入手机号..." name="username" id="username" />
+					 </div>
+					 <div class="form-group">
+					    <label for="">密码：</label>	
+					    <input class="form-control" type="password" placeholder="输入密码..." name="password" id="password" />
+					 </div>
+					 <div class="form-group">
+					    <label for="">确认密码：</label>	
+					    <input class="form-control" type="password" placeholder="输入密码..." name="password_two" id="password_two" />
+					 </div>
+					 <div class="form-group">
+					 	<input type="submit" value="注册" name="submit" id="submit" class="btn btn-info btn-block">
+					 </div>
+					 <p class="text-right"><a id="dl_hidd">登录</a></p>
+				</form>
+			</div>
 		</div>
 		<div class="container" id="nav">
 			<img src="./images/icon/menu.png" alt="" id="menu">
@@ -43,7 +73,40 @@
 				<li role="presentation"><a href="./video.html">视频</a></li>
 				<li role="presentation" class="active"><a href="#">Canvas绘画</a></li>
 				<li role="presentation"><a href="./Aboud.html">关于</a></li>
-				<a class="btn_login r" id="dl">登录</a>
+				<div class="btn_login r">
+					<a id="dl"><div class="btn_login_text">登录</div></a>
+				<div id="user_infor">
+						<br />
+						<p class="lead text-center" id="user_username">username</p>
+						<!--<hr />-->
+						<ul class="list-group">
+						  <li class="list-group-item">
+						    <span class="badge">14</span>
+						    <p class="text-left user_infor_p" id="user_phone"><img src="images/icon/user/手机.svg" alt="" />userphone</p>
+						  </li>
+						  <li class="list-group-item">
+						  	<span class="badge">15</span>
+						  	<p class="text-left user_infor_p" id="user_grzx"><img src="images/icon/user/个人中心.svg"/>个人中心</p>
+						  </li>
+						  <li class="list-group-item">
+						  	<span class="badge">15</span>
+						  	<p class="text-left user_infor_p" id="user_xx"><img src="images/icon/user/消息.svg"/>消息</p>
+						  </li>
+						  <li class="list-group-item">
+						  	<span class="badge">15</span>
+						  	<p class="text-left user_infor_p" id="user_xgzl"> <img src="images/icon/user/修改资料.svg"/>修改资料</p>
+						  </li>
+						  <li class="list-group-item">
+						  	<span class="badge">15</span>
+						  	<p class="text-left user_infor_p" id="user_sz"> <img src="images/icon/user/设置.svg"/>设置</p>
+						  </li>
+						  <li class="list-group-item">
+						  	<span class="badge">15</span>
+						  	<p class="text-left user_infor_p" id="user_yjfk"> <img src="images/icon/user/意见反馈.svg"/>意见反馈</p>
+						  </li>
+						</ul>
+					</div>
+				</div>
 			</ul>
 		</div>
 		<!-- 标题栏 -->
@@ -54,32 +117,35 @@
 		    <div class="title"><h4>Canvas绘画</h4></div>
 		    <div class="tz-canvas">
 		    	<div class="row">
-		    		<div class="col-sm-6 col-md-2"><a href="./playvideo.html" name="C_carrot"><div><img src="./images/canvas_img/1.png" alt=""class="img-rounded"></div></a></div>
-		    		<div class="col-sm-6 col-md-2"><a href="./playvideo.html" name="C_totoro"><div><img src="./images/canvas_img/2.png" alt=""class="img-rounded"></div></a></div>
-		    		<div class="col-sm-6 col-md-2"><a href="./playvideo.html" name="C_card"><div><img src="./images/canvas_img/3.png" alt=""class="img-rounded"></div></a></div>
-		    		<div class="col-sm-6 col-md-2"><a href="./playvideo.html" name="C_duck"><div><img src="./images/canvas_img/4.png" alt=""class="img-rounded"></div></a></div>
-		    		<div class="col-sm-6 col-md-2"><a href="./playvideo.html" name="C_bird"><div><img src="./images/canvas_img/5.png" alt=""class="img-rounded"></div></a></div>
-		    		<div class="col-sm-6 col-md-2"><a href="./playvideo.html" name="C_rabbit"><div><img src="./images/canvas_img/6.jpg" alt=""class="img-rounded"></div></a></div>
-		    		<div class="col-sm-6 col-md-2"><a href="./playvideo.html" name="move"><div><img src="./images/canvas_img/move.png" alt=""class="img-rounded"></div></a></div>
-		    		<div class="col-sm-6 col-md-2"><a href="./playvideo.html" name="Time"><div><img src="./images/canvas_img/Time.png" alt=""class="img-rounded"></div></a></div>
+		    		<div class="col-sm-6 col-md-4 col-lg-2"><a href="./playvideo.html" name="C_carrot"><div><img src="./images/canvas_img/1.png" alt=""class="img-rounded"></div></a></div>
+		    		<div class="col-sm-6 col-md-4 col-lg-2"><a href="./playvideo.html" name="C_totoro"><div><img src="./images/canvas_img/2.png" alt=""class="img-rounded"></div></a></div>
+		    		<div class="col-sm-6 col-md-4 col-lg-2"><a href="./playvideo.html" name="C_card"><div><img src="./images/canvas_img/3.png" alt=""class="img-rounded"></div></a></div>
+		    		<div class="col-sm-6 col-md-4 col-lg-2"><a href="./playvideo.html" name="C_duck"><div><img src="./images/canvas_img/4.png" alt=""class="img-rounded"></div></a></div>
+		    		<div class="col-sm-6 col-md-4 col-lg-2"><a href="./playvideo.html" name="C_bird"><div><img src="./images/canvas_img/5.png" alt=""class="img-rounded"></div></a></div>
+		    		<div class="col-sm-6 col-md-4 col-lg-2"><a href="./playvideo.html" name="C_rabbit"><div><img src="./images/canvas_img/6.jpg" alt=""class="img-rounded"></div></a></div>
+		    		<div class="col-sm-6 col-md-4 col-lg-2"><a href="./playvideo.html" name="move"><div><img src="./images/canvas_img/move.png" alt=""class="img-rounded"></div></a></div>
+		    		<div class="col-sm-6 col-md-4 col-lg-2"><a href="./playvideo.html" name="Time"><div><img src="./images/canvas_img/Time.png" alt=""class="img-rounded"></div></a></div>
 		    	</div>
 		    </div>
 		</div>
-		
-		<!-- footer -->
+	</div>
+	<!-- footer -->
 		<div class="footer_name">
 			<div>
-				<p class="text-center">制作者：余浩源 &nbsp; &nbsp;学号：1801050654 &nbsp; &nbsp;      所在学校：广东创新科技职业学院 &nbsp; &nbsp; 所在班级：18计应卓越班</p>
-				<p class="text-center">邮箱：yuhaoyuang@163.com</p>
+				<p>制作者：余浩源、邱垂杰、肖裕东  &nbsp; &nbsp;联系方式：XXXXXXXXXXX &nbsp; &nbsp;      联系地址：China</p>
+				<p>邮箱：xxxxxxxxxxxx@163.com</p>
+				<p>注：该作品为余浩源、邱垂杰、肖裕东所有。</p>
 			</div>
 		</div>
-	</div>
-
+		<!--返回最上-->
+		<div id="back">
+				<img src="./images/icon/up.svg" alt="" />
+		</div>
+	<!--返回最上-->
 	<!-- 引用JQ and bootstrap --> 
 	<script src="./js/jquery-3.4.1.js"></script>
 	<script src="./js/bootstrap.js"></script>
 	<script src="./js/baguetteBox.min.js"></script>
-	<script src="./框架/layer-v3.1.1/layer/layer.js"></script>
 	<script src="./js/moveblie.js"></script>
 	<script type="text/javascript">
 		baguetteBox.run('.tz-gallery');
@@ -88,16 +154,6 @@
 				console.log("账号:"+sessionStorage["username"]+"密码:"+sessionStorage["password"]);
 				$("#dl").html(sessionStorage["username"]);
 			}
-			// $("#dl").on("click",function(){
-			// 	layer.open({
-			//       type: 2,
-			//       title: '登录',
-			//       maxmin: true,
-			//       shadeClose: true, //点击遮罩关闭层
-			//       area : ['320px' , '400px'],
-			//       content: './web/dl.html'
-			//     });
-			// })
 			$(".tz-video>div>div>div>a,.tz-canvas>div>div>a").click(function(){	
 				if (window.sessionStorage) {
 					sessionStorage.name = $(this).attr("name");
