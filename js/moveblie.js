@@ -20,7 +20,7 @@ $(function(){
 		$("#dl_btn").css("display","none");
 		$("#zc_btn").css("display","block");
 	});
-	$("#dl").click(function(){
+	$(".btn_login_text").click(function(){
 		$(".dl").show();
 		$(".mb").show();
 	});
@@ -53,13 +53,13 @@ $(function(){
 	}else{
 		$("#jzmm").removeAttr("checked","checked");
 	}
-	if (sessionStorage["username"] && sessionStorage["password"]) {	//判断账号和密码是否已存储到浏览器中
-		$("h1").html("切换账号");
-		$("#username").val(sessionStorage["username"]);				//将存储在浏览器中的账号显示
-		if (sessionStorage["jzmm"] == 1) {							//如果上次登录选择了记住密码，则显示密码
-			$("#password").val(sessionStorage["password"]);
-		}
-	}
+	// if (sessionStorage["username"] && sessionStorage["password"]) {	//判断账号和密码是否已存储到浏览器中
+	// 	$("h1").html("切换账号");
+	// 	$("#username").val(sessionStorage["username"]);				//将存储在浏览器中的账号显示
+	// 	if (sessionStorage["jzmm"] == 1) {							//如果上次登录选择了记住密码，则显示密码
+	// 		$("#password").val(sessionStorage["password"]);
+	// 	}
+	// }
 	
 })
 	

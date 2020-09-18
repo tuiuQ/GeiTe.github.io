@@ -1,33 +1,51 @@
 $(function () {
 
   let gallery = $(".tz-gallery .row")
-  let video = $(".tz-video .row")
   let canvas = $(".tz-canvas .row")
+
+  let videozhu = $(".tz-video .row")
+  let videoci = $(".tz-video .row .ci")
 
   ajaxload(1, gallery, createHot)
 
-  ajaxload(2, video, createVideoItem)
-
-  ajaxload(3, canvas, )
+  ajaxload(3, canvas, createCanvasItem)
 
 
-  function ajaxload(index, we, obj) {
-    $.ajax({
-    url: "http://localhost:8989/api/news/hot/",
-    type: "get",
+  $.ajax({
+    url: 'http://localhost:8989/api/hot/category',
+    type: 'get',
     data: {
-      "category": index
+      "category_id": 2
     },
     success: res => {
       $.each(res, (index, ele) => {
-        let item = obj(ele)
-        we.append(item)
+        if (index > 4) return false
+        if (index == 0) {
+          videozhu.prepend(createVideoItem(ele))
+        } else {
+          videoci.append(createVideoItem(ele))
+        }
       })
-      if (index == 1) {
-        baguetteBox.run('.tz-gallery');
-      }
     }
   })
+
+  function ajaxload(index, we, obj) {
+    $.ajax({
+      url: "http://localhost:8989/api/hot/category/",
+      type: "get",
+      data: {
+        "category_id": index
+      },
+      success: res => {
+        $.each(res, (index, ele) => {
+          let item = obj(ele)
+          we.append(item)
+        })
+        if (index == 1) {
+          baguetteBox.run('.tz-gallery');
+        }
+      }
+    })
   }
 
   function createHot(ele) {
@@ -59,6 +77,10 @@ $(function () {
         "\t\t    \t\t\t</div>")
 
     return item
+  }
+
+  function createVideoZhuItem(ele) {
+
   }
 
   function createCanvasItem(ele) {

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">	<!-- 自适应显示器宽度 -->
+	<title>简绘-播放器</title>
+	<link rel="stylesheet" href="./css/bootstrap.css">	<!-- 引用bootstrap样式 -->
+	<link rel="stylesheet" href="./css/all.css">
+	<link rel="icon" href="./images/icon/jane.ico" />	<!--添加icon图标-->
+	<script src="./js/Auth.js"></script>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="mb"></div> <!--登录是的黑色隔层-->
+		<div class="dl">
+			<div id="dl_btn">
+				<span class="glyphicon glyphicon-remove" style="float: right;margin: 5px;" id="guanbi"></span>
+				<h1>登录</h1>
+					<div class="form-group">
+					    <label for="">手机号：</label>
+					    <input class="form-control username" type="text" placeholder="输入手机号..." name="username" />
+					 </div>
+					 <div class="form-group">
+					    <label for="">密码：</label>
+					    <input class="form-control password" type="password" placeholder="输入密码..." name="password" />
+					 </div>
+					 <div class="form-group">
+					 	<input type="checkbox" id="jzmm"><small style="margin-left: 5px;">记住密码</small>
+					 </div>
+					 <div class="form-group">
+					 	<input type="submit" value="登录" name="submit" class="btn btn-info btn-block submit">
+					 </div>
+					 <div class="form-group">
+					 	<input type="reset" value="重置" name="reset" id="reset" class="btn btn-danger btn-block">
+					 </div>
+					 <p class="text-right"><a id="zc_hidd">注册</a></p>
+			</div>
+			<div id="zc_btn">
+				<span class="glyphicon glyphicon-remove" style="float: right;margin: 5px;" id="zc_guanbi"></span>
+				<h1>注册</h1>
+
+					<div class="form-group">
+					    <label for="">用户名：</label>
+					    <input class="form-control username" type="phone" placeholder="输入用户名..." name="username" />
+					 </div>
+					<div class="form-group">
+					    <label for="">手机号：</label>
+					    <input class="form-control telephone" type="phone" placeholder="输入手机号..." name="username"/>
+					 </div>
+					 <div class="form-group">
+					    <label for="">密码：</label>
+					    <input class="form-control password" type="password" placeholder="输入密码..." name="password" />
+					 </div>
+					 <div class="form-group">
+					    <label for="">确认密码：</label>
+					    <input class="form-control password_two" type="password" placeholder="输入密码..." name="password_two" />
+					 </div>
+					 <div class="form-group">
+					 	<input type="submit" value="注册" name="submit" class="btn btn-info btn-block submit">
+					 </div>
+					 <p class="text-right"><a id="dl_hidd">登录</a></p>
+			</div>
+
+		</div>
+		<div class="container" id="nav">
+			<img src="./images/icon/menu.png" alt="" id="menu">
+			<ul class="nav nav-tabs">		<!-- 导航 -->
+				<li role="presentation" ><a href="./index.html">Jane painting</a></li>
+				<li role="presentation"><a href="./gallery.html">画廊</a></li>
+				<li role="presentation"><a href="./video.html">视频</a></li>
+				<li role="presentation"><a href="./Canvas.html">Canvas绘画</a></li>
+				<li role="presentation"><a href="./Aboud.html">关于</a></li>
+				<div class="btn_login r">
+					<a id="dl"><div class="btn_login_text">登录</div></a>
+					<a id="log" style="display: none"><span class="btn-login_text">欢迎您！</span></a>
+					<div id="user_infor">
+						<br />
+						<p class="lead text-center" id="user_username">username</p>
+						<!--<hr />-->
+						<ul class="list-group">
+						  <li class="list-group-item">
+						    <span class="badge">14</span>
+						    <p class="text-left user_infor_p" id="user_phone"><img src="images/icon/user/手机.svg" alt="" />userphone</p>
+						  </li>
+						  <li class="list-group-item">
+						  	<span class="badge">15</span>
+						  	<p class="text-left user_infor_p" id="user_grzx"><img src="images/icon/user/个人中心.svg"/>个人中心</p>
+						  </li>
+						  <li class="list-group-item">
+						  	<span class="badge">15</span>
+						  	<p class="text-left user_infor_p" id="user_xx"><img src="images/icon/user/消息.svg"/>消息</p>
+						  </li>
+						  <li class="list-group-item">
+						  	<span class="badge">15</span>
+						  	<p class="text-left user_infor_p" id="user_xgzl"> <img src="images/icon/user/修改资料.svg"/>修改资料</p>
+						  </li>
+						  <li class="list-group-item">
+						  	<span class="badge">15</span>
+						  	<p class="text-left user_infor_p" id="user_sz"> <img src="images/icon/user/设置.svg"/>设置</p>
+						  </li>
+						  <li class="list-group-item">
+						  	<span class="badge">15</span>
+						  	<p class="text-left user_infor_p" id="user_yjfk"> <img src="images/icon/user/意见反馈.svg"/>意见反馈</p>
+						  </li>
+						</ul>
+					</div>
+				</div>
+			</ul>
+		</div>
+		<div class="container">
+			<!-- <div style="width: 100%;height: 705px;"> -->
+				<iframe frameborder="0" width="100%" height="800px" scrolling="no" id="iframe"></iframe>
+			<!-- </div> -->
+			<!--评论-->
+				<p class="label text-left" id="pinlun_title">评论</p>
+				<hr />
+				<!--发表-->
+				<div>
+					<textarea name="dis_text" id="dis_text" rows="3" class="form-control" placeholder="请输入你想说的..."></textarea>
+					<input type="button" class="btn btn-success" value="评论" id="dis_btn"/>
+				</div>
+				<!--发表-->
+				<div id="pinlun">
+
+				</div>
+			<!--评论-->
+		</div>
+	</div>
+	<!-- footer -->
+		<div class="footer_name" id="footer_name">
+			<div>
+				<p>制作者：余浩源、邱垂杰、肖裕东  &nbsp; &nbsp;联系方式：XXXXXXXXXXX &nbsp; &nbsp;      联系地址：China</p>
+				<p>邮箱：xxxxxxxxxxxx@163.com</p>
+				<p>注：该作品为余浩源、邱垂杰、肖裕东所有。</p>
+			</div>
+		</div>
+		<!--返回最上-->
+		<div id="back">
+				<img src="./images/icon/up.svg" alt="" />
+		</div>
+	<!--返回最上-->
+	<script src="./js/jquery-3.4.1.js"></script>
+	<script src="./js/bootstrap.js"></script>
+	<script src="./js/moveblie.js"></script>
+	<script src="./js/login.js"></script>
+	<script>
+		$(function(){
+			var value = sessionStorage["name"];
+			let pinlun = $("#pinlun")
+			let dis_btn = $("#dis_btn")
+			$.ajax({
+				url: "http://localhost:8989/api/canvasComment/canvas/",
+				type: "get",
+				data: {
+					"canvas": value
+				},
+				success: res => {
+					$.each(res, (index, ele) => {
+						let item = createComment(ele)
+						pinlun.append(item)
+					})
+				}
+			})
+
+			dis_btn.click(() => {
+				let user = localStorage.getItem(USER_KEY)
+				user = JSON.parse(user)
+				if (user) {
+					let content = $("#dis_text").val()
+					$.ajax({
+						url: "http://localhost:8989/api/canvasComment/",
+						type: "post",
+						data: {
+							"author_id": user.uid,
+							"canvas_id": value,
+							"content": content,
+							"is_active": true
+						},
+						success: res => {
+							window.location.reload()
+						}
+					})
+				} else {
+					alert("请先登录");
+				}
+			})
+
+			$.ajax({
+				url: "http://localhost:8989/api/canvas/"+value+"/",
+				type: "get",
+				success: res => {
+					$("#iframe").attr("src", res.video);
+				}
+			})
+
+			function createComment(ele) {
+				let item = $("<div class=\"discuss\">\n" +
+								"\t\t\t\t\t\t<p class=\"text-left\">\n" +
+								"\t\t\t\t\t\t\t<img src=\""+ele.author.avator+"\" alt=\"\" class=\"img-circle\"/>\n" +
+								"\t\t\t\t\t\t\t<span class=\"dis_name\">"+ele.author.username+"</span>\n" +
+								"\t\t\t\t\t\t</p>\n" +
+								"\t\t\t\t\t\t<blockquote class=\"blockquote-reverse\">\n" +
+								"\t\t\t\t\t\t  <p>"+ele.content+"</p>\n" +
+								"\t\t\t\t\t\t  <footer>Someone famous in <cite title=\"Source Title\">Source Title</cite></footer>\n" +
+								"\t\t\t\t\t\t  <footer><cite title=\"Source Title\">"+ele.pub_time.split("T")[0]+"</cite></footer>\n" +
+								"\t\t\t\t\t\t</blockquote>\n" +
+								"\t\t\t\t\t</div>")
+				return item
+			}
+　　
+		})
+	</script>
+</body>
+</html>

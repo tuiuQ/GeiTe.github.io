@@ -1,7 +1,7 @@
 $(function () {
-  let btn = $("#submit")
-  let username = $("#username")
-  let password = $("#password")
+  let btn = $("#dl_btn .submit")
+  let username = $("#dl_btn .username")
+  let password = $("#dl_btn .password")
   const auth = new Auth()
   username.val("13719283454")
   password.val("qiuchuijie@0608")
@@ -52,6 +52,7 @@ $(function () {
           if (res.code == 200) {
             console.log(res)
             auth.setUserToken(res.user, res.token)
+            window.location.reload()
           } else {
             console.log("登录失败")
           }

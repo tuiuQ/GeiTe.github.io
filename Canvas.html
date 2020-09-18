@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="./css/baguetteBox.min.css">
 	<link rel="stylesheet" href="./css/all.css">
 	<link rel="icon" href="./images/icon/jane.ico" />	<!--添加icon图标-->
+	<script src="./js/Auth.js"></script>
 </head>
 <body>
 	<div class="container-fluid">
@@ -17,53 +18,51 @@
 			<div id="dl_btn">
 				<span class="glyphicon glyphicon-remove" style="float: right;margin: 5px;" id="guanbi"></span>
 				<h1>登录</h1>
-				<form action="">
 					<div class="form-group">
-					    <label for="">手机号：</label>	
-					    <input class="form-control" type="text" placeholder="输入手机号..." name="username" id="username" />
+					    <label for="">手机号：</label>
+					    <input class="form-control username" type="text" placeholder="输入手机号..." name="username" />
 					 </div>
 					 <div class="form-group">
-					    <label for="">密码：</label>	
-					    <input class="form-control" type="password" placeholder="输入密码..." name="password" id="password" />
+					    <label for="">密码：</label>
+					    <input class="form-control password" type="password" placeholder="输入密码..." name="password" />
 					 </div>
 					 <div class="form-group">
 					 	<input type="checkbox" id="jzmm"><small style="margin-left: 5px;">记住密码</small>
 					 </div>
 					 <div class="form-group">
-					 	<input type="submit" value="登录" name="submit" id="submit" class="btn btn-info btn-block">
+					 	<input type="submit" value="登录" name="submit" class="btn btn-info btn-block submit">
 					 </div>
 					 <div class="form-group">
 					 	<input type="reset" value="重置" name="reset" id="reset" class="btn btn-danger btn-block">
 					 </div>
 					 <p class="text-right"><a id="zc_hidd">注册</a></p>
-				</form>
 			</div>
 			<div id="zc_btn">
 				<span class="glyphicon glyphicon-remove" style="float: right;margin: 5px;" id="zc_guanbi"></span>
 				<h1>注册</h1>
-				<form action="">
+
 					<div class="form-group">
-					    <label for="">用户名：</label>	
-					    <input class="form-control" type="phone" placeholder="输入用户名..." name="username" id="username" />
+					    <label for="">用户名：</label>
+					    <input class="form-control username" type="phone" placeholder="输入用户名..." name="username" />
 					 </div>
 					<div class="form-group">
-					    <label for="">手机号：</label>	
-					    <input class="form-control" type="phone" placeholder="输入手机号..." name="username" id="username" />
+					    <label for="">手机号：</label>
+					    <input class="form-control telephone" type="phone" placeholder="输入手机号..." name="username"/>
 					 </div>
 					 <div class="form-group">
-					    <label for="">密码：</label>	
-					    <input class="form-control" type="password" placeholder="输入密码..." name="password" id="password" />
+					    <label for="">密码：</label>
+					    <input class="form-control password" type="password" placeholder="输入密码..." name="password" />
 					 </div>
 					 <div class="form-group">
-					    <label for="">确认密码：</label>	
-					    <input class="form-control" type="password" placeholder="输入密码..." name="password_two" id="password_two" />
+					    <label for="">确认密码：</label>
+					    <input class="form-control password_two" type="password" placeholder="输入密码..." name="password_two" />
 					 </div>
 					 <div class="form-group">
-					 	<input type="submit" value="注册" name="submit" id="submit" class="btn btn-info btn-block">
+					 	<input type="submit" value="注册" name="submit" class="btn btn-info btn-block submit">
 					 </div>
 					 <p class="text-right"><a id="dl_hidd">登录</a></p>
-				</form>
 			</div>
+
 		</div>
 		<div class="container" id="nav">
 			<img src="./images/icon/menu.png" alt="" id="menu">
@@ -75,7 +74,8 @@
 				<li role="presentation"><a href="./Aboud.html">关于</a></li>
 				<div class="btn_login r">
 					<a id="dl"><div class="btn_login_text">登录</div></a>
-				<div id="user_infor">
+					<a id="log" style="display: none"><span class="btn-login_text">欢迎您！</span></a>
+					<div id="user_infor">
 						<br />
 						<p class="lead text-center" id="user_username">username</p>
 						<!--<hr />-->
@@ -117,14 +117,13 @@
 		    <div class="title"><h4>Canvas绘画</h4></div>
 		    <div class="tz-canvas">
 		    	<div class="row">
-		    		<div class="col-sm-6 col-md-4 col-lg-2"><a href="./playvideo.html" name="C_carrot"><div><img src="./images/canvas_img/1.png" alt=""class="img-rounded"></div></a></div>
-		    		<div class="col-sm-6 col-md-4 col-lg-2"><a href="./playvideo.html" name="C_totoro"><div><img src="./images/canvas_img/2.png" alt=""class="img-rounded"></div></a></div>
-		    		<div class="col-sm-6 col-md-4 col-lg-2"><a href="./playvideo.html" name="C_card"><div><img src="./images/canvas_img/3.png" alt=""class="img-rounded"></div></a></div>
-		    		<div class="col-sm-6 col-md-4 col-lg-2"><a href="./playvideo.html" name="C_duck"><div><img src="./images/canvas_img/4.png" alt=""class="img-rounded"></div></a></div>
-		    		<div class="col-sm-6 col-md-4 col-lg-2"><a href="./playvideo.html" name="C_bird"><div><img src="./images/canvas_img/5.png" alt=""class="img-rounded"></div></a></div>
-		    		<div class="col-sm-6 col-md-4 col-lg-2"><a href="./playvideo.html" name="C_rabbit"><div><img src="./images/canvas_img/6.jpg" alt=""class="img-rounded"></div></a></div>
-		    		<div class="col-sm-6 col-md-4 col-lg-2"><a href="./playvideo.html" name="move"><div><img src="./images/canvas_img/move.png" alt=""class="img-rounded"></div></a></div>
-		    		<div class="col-sm-6 col-md-4 col-lg-2"><a href="./playvideo.html" name="Time"><div><img src="./images/canvas_img/Time.png" alt=""class="img-rounded"></div></a></div>
+		    		<div class="col-sm-6 col-md-4 col-lg-2"><a href="./playcanvas.html" name="C_carrot"><div><img src="./images/canvas_img/1.png" alt=""class="img-rounded"></div></a></div>
+		    		<div class="col-sm-6 col-md-4 col-lg-2"><a href="./playcanvas.html" name="C_totoro"><div><img src="./images/canvas_img/2.png" alt=""class="img-rounded"></div></a></div>
+		    		<div class="col-sm-6 col-md-4 col-lg-2"><a href="./playcanvas.html" name="C_card"><div><img src="./images/canvas_img/3.png" alt=""class="img-rounded"></div></a></div>
+		    		<div class="col-sm-6 col-md-4 col-lg-2"><a href="./playcanvas.html" name="C_duck"><div><img src="./images/canvas_img/4.png" alt=""class="img-rounded"></div></a></div>
+		    		<div class="col-sm-6 col-md-4 col-lg-2"><a href="./playcanvas.html" name="C_bird"><div><img src="./images/canvas_img/5.png" alt=""class="img-rounded"></div></a></div>
+		    		<div class="col-sm-6 col-md-4 col-lg-2"><a href="./playcanvas.html" name="C_rabbit"><div><img src="./images/canvas_img/6.jpg" alt=""class="img-rounded"></div></a></div>
+		    		<div class="col-sm-6 col-md-4 col-lg-2"><a href="./playcanvas.html" name="Time"><div><img src="./images/canvas_img/Time.png" alt=""class="img-rounded"></div></a></div>
 		    	</div>
 		    </div>
 		</div>
@@ -147,21 +146,30 @@
 	<script src="./js/bootstrap.js"></script>
 	<script src="./js/baguetteBox.min.js"></script>
 	<script src="./js/moveblie.js"></script>
+	<script src="./js/login.js"></script>
 	<script type="text/javascript">
-		baguetteBox.run('.tz-gallery');
 		$(function(){
-			if (sessionStorage["username"] && sessionStorage["password"]) {
-				console.log("账号:"+sessionStorage["username"]+"密码:"+sessionStorage["password"]);
-				$("#dl").html(sessionStorage["username"]);
-			}
-			$(".tz-video>div>div>div>a,.tz-canvas>div>div>a").click(function(){	
-				if (window.sessionStorage) {
-					sessionStorage.name = $(this).attr("name");
-					location.href = "./playvideo.html";
-				}else{
-					alert("NOT strong");
+			let canvas = $(".tz-canvas .row")
+			$.ajax({
+				url: "http://localhost:8989/api/canvas/",
+				type: "get",
+				success: res => {
+					$.each(res, (index, ele) => {
+						let item = $("<div class=\"col-sm-6 col-md-4 col-lg-2\"><a href=\"./playcanvas.html\" name=\""+ele.cid+"\"><div><img src=\""+ele.thumbnail+"\" alt=\"\"class=\"img-rounded\"></div></a></div>")
+						canvas.append(item)
+					})
+
+					$(".tz-video>div>div>div>a,.tz-canvas>div>div>a").click(function(){
+						if (window.sessionStorage) {
+							sessionStorage.name = $(this).attr("name");
+							location.href = "./playvideo.html";
+						}else{
+							alert("NOT strong");
+						}
+					});
 				}
-			});
+			})
+
 		});
 	</script>
 </body>
