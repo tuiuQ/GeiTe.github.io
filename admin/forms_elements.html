@@ -274,7 +274,11 @@
 
                   <input type="text" class="form-control" id="url" placeholder="图片连接">
                   <span class="input-group-btn">
-                    <button class="btn btn-default">上传图片</button>
+                    <button class="btn btn-default upload">上传图片
+
+                    </button>
+                    <input style="display: none;" type="file" class="file-btn">
+
                   </span>
                 </div><!-- /input-group -->
 
@@ -298,5 +302,29 @@
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/perfect-scrollbar.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
+
+<script>
+  $(".upload").click(() => {
+    $(".file-btn").click()
+    $(".file-btn").change(() => {
+      let file = $(".file-btn").prop("files")[0]
+      let data = new FormData()
+      data.append("myfile", file)
+      $.ajax({
+        url: "http://localhost:8989/api/upload/?type=thumbnail",
+        type: "post",
+        data: data,
+        cache: false,
+        processData: false,
+        contentType: false,
+        success: res => {
+          console.log(unescape(res['url']))
+          $("#url").val(unescape(res['url']))
+        }
+      })
+    })
+  })
+
+</script>
 </body>
 </html>
