@@ -17,7 +17,7 @@
 html,body{min-width: 360px;} 	/*网页大小不能小于360px*/
 a,a:hover{text-decoration: none;cursor: pointer;}
 /*登录*/
-.btn_login{width: 80px;height: 42px;text-align: center;background-color: #F2F2F2;font-size: 15px;padding-top: 10px;cursor: pointer;}
+.btn_login{padding: 0 10px;height: 42px;text-align: center;background-color: #F2F2F2;font-size: 15px;padding-top: 10px;cursor: pointer;}
 .btn_login:hover{background-color: #03899C;transition: all 0.5s;}
 .btn_login:hover>a>div.btn_login_text{color: #fff;}
 .btn_login_moveblie{color: #337ab7;}

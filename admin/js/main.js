@@ -145,4 +145,6 @@ jQuery( function() {
 	setTheme('header_bg', 'data-headerbg');
 	setTheme('sidebar_bg', 'data-sidebarbg');
 
+
+
 });

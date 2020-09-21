@@ -1,4 +1,4 @@
-card-header<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh">
 <head>
 <meta charset="utf-8">
@@ -11,6 +11,8 @@ card-header<!DOCTYPE html>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/materialdesignicons.min.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="js/jconfirm/jquery-confirm.min.css">
+  <script src="../js/Auth.js"></script>
 </head>
   
 <body data-logobg="color_8" data-sidebarbg="color_8">
@@ -257,7 +259,7 @@ card-header<!DOCTYPE html>
               <div class="card-body">
 
                 <div class="form-group form-inline">
-                  <button class="btn btn-primary m-b-10 p-b-10">确定上传</button>
+                  <button class="btn btn-primary m-b-10 p-b-10 subBtn">确定上传</button>
                   <button class="btn btn-danger m-b-10">重置</button>
                 </div>
                 <div class="form-group">
@@ -268,12 +270,28 @@ card-header<!DOCTYPE html>
                   <label for="desc">视频简介</label>
                   <input type="text" class="form-control" id="desc" placeholder="视频简介">
                 </div>
+                <div class="form-group">
+                  <label for="category">视频分类</label>
+                  <select name="category" id="category" class="form-control">
+
+                  </select>
+                </div>
+                <label for="url">缩略图</label>
+                <div class="input-group">
+
+                  <input type="text" class="form-control" id="thumbnail-url" placeholder="视频连接">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default thumbnail-btn">上传视频</button>
+                    <input type="file" class="thumbnail-file-btn" style="display: none;">
+                  </span>
+                </div><!-- /input-group -->
                 <label for="url">视频连接</label>
                 <div class="input-group">
 
-                  <input type="text" class="form-control" id="url" placeholder="视频连接">
+                  <input type="text" class="form-control" id="video-url" placeholder="视频连接">
                   <span class="input-group-btn">
-                    <button class="btn btn-default">上传视频</button>
+                    <button class="btn btn-default video-btn">上传视频</button>
+                    <input type="file" class="video-file-btn" style="display: none;">
                   </span>
                 </div><!-- /input-group -->
 
@@ -287,15 +305,10 @@ card-header<!DOCTYPE html>
         </div>
           
          
-          
-          <div class="col-md-12">
+
             
-            </div>
-          </div>
-          
         </div>
-        
-      </div>
+
       
     </main>
     <!--End 页面主要内容-->
@@ -306,5 +319,94 @@ card-header<!DOCTYPE html>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/perfect-scrollbar.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
+<script src="js/jconfirm/jquery-confirm.min.js"></script>
+<script>
+  let select = $("#category")
+  let user = localStorage.getItem(USER_KEY)
+  user = JSON.parse(user)
+  $.ajax({
+    url: "http://localhost:8989/api/category/",
+    type: "get",
+    success: res => {
+      $.each(res, (index, ele) => {
+        let item = $("<option value='"+ele.cid+"'>"+ele.name+"</option>")
+        select.append(item)
+      })
+    }
+  })
+  $(".video-btn").click(() => {
+
+    $(".video-file-btn").click()
+    $(".video-file-btn").change(() => {
+      let file = $(".video-file-btn").prop("files")[0]
+      let data = new FormData()
+      data.append("myfile", file)
+      $.ajax({
+        url: "http://localhost:8989/api/upload/",
+        type: "post",
+        data: data,
+        cache: false,
+        processData: false,
+        contentType: false,
+        success: res => {
+          $("#video-url").val(unescape(res['url']))
+        }
+      })
+    })
+  })
+  $(".thumbnail-btn").click(() => {
+
+    $(".thumbnail-file-btn").click()
+    $(".thumbnail-file-btn").change(() => {
+      let file = $(".thumbnail-file-btn").prop("files")[0]
+      let data = new FormData()
+      data.append("myfile", file)
+      $.ajax({
+        url: "http://localhost:8989/api/upload/",
+        type: "post",
+        data: data,
+        cache: false,
+        processData: false,
+        contentType: false,
+        success: res => {
+          $("#thumbnail-url").val(unescape(res['url']))
+        }
+      })
+    })
+  })
+
+
+  $(".subBtn").click(() => {
+    if ($("#name").val() !== "" && $("#desc").val() !== "" && $("#video-url").val() !== "" && $("#thumbnail-url") !== "") {
+      $.ajax({
+        url: "http://localhost:8989/api/video/",
+        type: "post",
+        data: {
+          "author_id": user.uid,
+          "category_id": select.val(),
+          "name": $("#name").val(),
+          "desc": $("#desc").val(),
+          "thumbnail": $("#thumbnail-url").val(),
+          "video": $("#video-url").val(),
+          "is_active": true
+        },
+        success: res => {
+          $.confirm({
+            title: "上传视频",
+            content: "上传成功",
+            buttons: {
+              formSubmit: {
+                text: "确定",
+                action: () => {
+                  window.location.reload()
+                }
+              }
+            }
+          })
+        }
+      })
+    }
+  })
+</script>
 </body>
 </html>

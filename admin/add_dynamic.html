@@ -506,41 +506,41 @@
 <script type="text/javascript">
 $(function(){
 		$('.example-p-3').on('click', function () {
-    $.confirm({
-        title: '提示',
-        content: '' +
-        '<form action="" class="formName">' +
-        '<div class="form-group">' +
-        '<label>请输入您的姓名</label>' +
-        '<input type="text" placeholder="姓名" class="name form-control" required />' +
-        '</div>' +
-        '</form>',
-        buttons: {
-            formSubmit: {
-                text: '提交',
-                btnClass: 'btn-blue',
-                action: function () {
-                    var name = this.$content.find('.name').val();
-                    if(!name){
-                        $.alert('请您输入您的姓名');
-                        return false;
-                    }
-                    $.alert('您的姓名是： ' + name);
-                }
-            },
-            cancel: {
-                text: '取消'
-            },
-        },
-        onContentReady: function () {
-            var jc = this;
-            this.$content.find('form').on('submit', function (e) {
-                e.preventDefault();
-                jc.$$formSubmit.trigger('click');
-            });
-        }
-    });
-});
+      $.confirm({
+          title: '提示',
+          content: '' +
+          '<form action="" class="formName">' +
+          '<div class="form-group">' +
+          '<label>请输入您的姓名</label>' +
+          '<input type="text" placeholder="姓名" class="name form-control" required />' +
+          '</div>' +
+          '</form>',
+          buttons: {
+              formSubmit: {
+                  text: '提交',
+                  btnClass: 'btn-blue',
+                  action: function () {
+                      var name = this.$content.find('.name').val();
+                      if(!name){
+                          $.alert('请您输入您的姓名');
+                          return false;
+                      }
+                      $.alert('您的姓名是： ' + name);
+                  }
+              },
+              cancel: {
+                  text: '取消'
+              },
+          },
+          onContentReady: function () {
+              var jc = this;
+              this.$content.find('form').on('submit', function (e) {
+                  e.preventDefault();
+                  jc.$$formSubmit.trigger('click');
+              });
+          }
+      });
+  });
     $('.search-bar .dropdown-menu a').click(function() {
         var field = $(this).data('field') || '';
         $('#search-field').val(field);

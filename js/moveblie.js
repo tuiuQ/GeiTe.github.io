@@ -60,6 +60,21 @@ $(function(){
 	// 		$("#password").val(sessionStorage["password"]);
 	// 	}
 	// }
+
+	let user = localStorage.getItem(USER_KEY)
+  user = JSON.parse(user)
+  if (user) {
+		$("#dl").hide()
+    $("#log").show()
+		$("#log").html("欢迎您！" + user.username)
+		$("#log").click(() => {
+			window.location.href = "./admin/index.html"
+		})
+  } else {
+    $("#dl").show()
+    $("#log").hide()
+  }
+
 	
 })
 	
